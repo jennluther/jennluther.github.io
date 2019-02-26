@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<!-- saved from url=(0105)https://learningsuite.byu.edu/plugins/Upload/fileDownload.php?fileId=36cc2831-WZvk-cwon-8MzH-3699ee3b6233 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <title>Form Demo with Flexbox</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        body {
+            background-color: #fed;
+            font-size: 12pt;
+        }
+
+        fieldset {
+            border: 0;
+            border-top: 1px solid navy;
+            border-style: dotted;
+            margin: .5em;
+        }
+
+        legend {
+            font-size: 1.5em;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            width: 50%;
+            margin: auto;
+        }
+
+        .btn-primary {
+            background-color: cornflowerblue;
+            padding: .5em;
+            margin-top: 1em;
+        }
+
+        .center-box {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        input, textarea, select, button, .control {
+            font: 400 14pt system-ui;
+        }
+
+        .hover-demo {
+            background-color: blue;
+            color: white;
+            padding: .5em;
+        }
+
+        .hover-demo:hover {
+            transition-property: background-color, color;
+            transition-duration: 350ms;
+            transition-timing-function: ease-out;
+            color: black;
+            background-color: white;
+            box-shadow: 2px 2px 1px gray;
+        }
+
+        .nav {
+          display: flex;
+          min-height: 36px;
+          align-items: center;
+          padding: 10px;
+          border: 1px solid rgba(238,238,238 ,1);
+          border-radius: 5px;
+          color: black;
+          box-shadow: 5px 10px 20px -20px rgba(85,172,238 ,1);
+          background-color: cornflowerblue;
+        }
+
+        .nav li {
+            cursor: pointer;
+            list-style-type: none;
+        }
+
+        .nav li:hover{
+          color: rgba(85,172,238 ,1);
+        }
+
+        .nav li:not(:last-child):not(.twitter__bird) {
+          margin-right: 10px;
+        }
+        .nav li  i:not(.fa-search):not(.fa-user) {
+          margin-right: 3px;
+        }
+
+        .fa-user{
+          margin-left: auto;
+          margin-right: auto
+        }
+
+        .last {
+          flex: 1;
+        }
+
+        @media all and (max-width: 600px) {
+
+          .nav {
+            flex-wrap: wrap;
+            justify-content: flex-start;
+          }
+
+          .nav > li {
+            flex-basis: 50%;
+          }
+        }
+
+        @media all and (max-width: 400px) {
+          .nav > li {
+            flex-basis: 100%;
+          }
+          .fa-user {
+            order: 1;
+          }
+        }
+    </style>
+</head>
+<body cz-shortcut-listen="true">
+    <ul class="nav" role="navigation">
+      <li><i class="fa fa-home"></i>Home</li>
+      <li>About</li>
+      <li class='last'>News</li>
+      <li><i class="fas fa-user"></i></li>
+    </ul>
+    <div class="container">
+        <h1>Initiate Pipeline Run</h1>
+        <fieldset>
+            <legend>Book</legend>
+            <select id="bookId" name="book">
+                <option value="0">&lt;none&gt;</option>
+                <option value="1">Kilbarchan Parish Record</option>
+                <option value="2">The Ely Ancestry</option>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>Page Range</legend>
+            <input type="text" name="startPage" size="5" value="1"> –
+            <input type="text" name="endPage" size="5" value="100">
+        </fieldset>
+
+        <fieldset>
+            <legend>Tools</legend>
+            <div class="center-box">
+                <span class="control"><input type="checkbox" id="tool1" name="tools" value="frontier"> FROntIER</span>
+                <span class="control"><input type="checkbox" id="tool2" name="tools" value="greendda"> GreenDDA</span>
+                <span class="control"><input type="checkbox" id="tool3" name="tools" value="greenfie"> GreenFIE</span>
+                <span class="control"><input type="checkbox" id="tool4" name="tools" value="listreader"> ListReader</span>
+                <span class="control"><input type="checkbox" id="tool5" name="tools" value="ontoes"> OntoES</span>
+                <span class="control"><input type="checkbox" id="tool6" name="tools" value="ontosoar"> OntoSoar</span>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>
+                Run Type
+            </legend>
+            <div class="center-box">
+                <span class="control"><input type="radio" name="runtype"> with COMET</span>
+                <span class="control"><input type="radio" name="runtype"> without COMET</span>
+            </div>
+        </fieldset>
+
+        <input type="button" class="btn-primary" id="initiateRun" value="Run">
+        <br>
+        <a href="https://learningsuite.byu.edu/plugins/Upload/fileDownload.php?fileId=36cc2831-WZvk-cwon-8MzH-3699ee3b6233#" onclick="goHome()">Back</a>
+    </div>
+    <div>
+        <span class="hover-demo">Try hovering over me.</span>
+    </div>
+
+
+</body></html>
